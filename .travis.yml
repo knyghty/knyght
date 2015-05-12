@@ -1,0 +1,18 @@
+language: python
+python: "3.4"
+env: DJANGO="Django<1.9"
+install:
+  - pip install $DJANGO --use-mirrors
+  - pip install coveralls
+script:
+  - coverage run manage.py test
+after_success:
+  - coveralls
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: KIGp4/zqjvXyrZCCplFqT3GhRqlp449cMKd7iHYsbcuF93YXAw7XmjjkN3L6a06HytUvukGfYZjaKGJ2Hq06fQ86tjvHlZP+jTn90owQytz94Q8422IelyS0RJI+fZihvdgjsu0Pvl33Qtc9It9avJfPCXXLH3YP2OdHtSQm1Zd6nFKKNoC/9CNUN1lZaMLXZ0SNCkZAdrmKdDRzkA+yFz1UUKOiAOL225m3ZhQDYq72Ji/GNFAFu3TrYgGuyXJrzgJuHO+qIv2Hl2TVXfGfaTafL0gvtW5ihLDTyY+ubcoWRwwuJVd93N+OjtHAAFUXxew0KDFo/AMV+f3LbEEyEK/YW8EheEzEJkLLu7xYITWFNTd9A3XOVZG6opMvEl6I8E2OL3njr6uE0z3N7UaPG6+EnBcdUZNxRxoDk/ApV/57BViwuOlZe9YI0O4UDxuW8t1BZv6Dm3Zn9VzEIi+dQcT6A+SXN5rtKuLpniTrB24YEuIlsN2JzyaISRs9RUwMN/7yzbfdHw21s+32OLeaJyPFG4UNdP2oSK7/q4jmIz6m5oKUhk8Xoh5RBxtQxkwj/0e+Ao5kMt1RtsynXiv9EEYF7nzbAs7i9C9pobtBM7cBTvbNKAU8HT06ot9rCEiv0dnbFVxhl2BUvjne99cem+Mq87mO5LsR7etkJHkD8Ro=
+  app: knyght
+  on:
+    repo: knyghty/knyght
