@@ -1,7 +1,13 @@
 language: python
 python: "3.4"
 env:
-  - DJANGO="Django<1.9" SECRET_KEY="travis" DATABASE_URL="postgres://postgres@localhost:5432/travisci"
+  global:
+    - DJANGO="Django<1.9"
+    - SECRET_KEY="travis"
+    - DATABASE_URL="postgres://postgres@localhost:5432/travisci"
+before_install:
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
 install:
   - pip install $DJANGO --use-mirrors
   - pip install coveralls
