@@ -33,3 +33,10 @@ class NewVisitorTest(LiveServerTestCase):
         self.assertTrue(home_link)
         self.assertTrue(work_link)
         self.assertTrue(contact_link)
+
+        # After the header the main content appears.
+        self.assertTrue(self.browser.find_element_by_tag_name('main'))
+
+        # TODO: Stuff on the homepage.
+
+        # TODO: Footer

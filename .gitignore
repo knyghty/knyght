@@ -61,3 +61,6 @@ target/
 
 # Static
 staticfiles/
+
+# Sass
+.sass-cache/
