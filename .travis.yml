@@ -4,6 +4,7 @@ env: DJANGO="Django<1.9"
 install:
   - pip install $DJANGO --use-mirrors
   - pip install coveralls
+  - pip install -r requirements.txt
 script:
   - coverage run manage.py test
 after_success:
