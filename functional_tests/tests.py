@@ -25,3 +25,11 @@ class NewVisitorTest(LiveServerTestCase):
         # And the main navigation menu.
         nav = self.browser.find_element_by_xpath("//header[@id='header']/nav")
         self.assertTrue(nav)
+
+        # Which contains links to Home, Work, and Contact.
+        home_link = self.browser.find_element_by_link_text('Home')
+        work_link = self.browser.find_element_by_link_text('Work')
+        contact_link = self.browser.find_element_by_link_text('Contact')
+        self.assertTrue(home_link)
+        self.assertTrue(work_link)
+        self.assertTrue(contact_link)
