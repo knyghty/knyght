@@ -1,8 +1,7 @@
 language: python
 python: "3.4"
 env:
-  - DJANGO="Django<1.9"
-  - SECRET_KEY="travis"
+  - DJANGO="Django<1.9" SECRET_KEY="travis" DATABASE_URL="postgres://postgres@localhost:5432/travisci"
 install:
   - pip install $DJANGO --use-mirrors
   - pip install coveralls
