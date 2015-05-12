@@ -18,6 +18,10 @@ class NewVisitorTest(LiveServerTestCase):
         # He sees knyg.ht in the title.
         self.assertIn('knyg.ht', self.browser.title)
 
-        # He also sees knyg.ht in the content.
-        body = self.browser.find_element_by_tag_name('body')
-        self.assertIn('knyg.ht', body.text)
+        # He also sees knyg.ht in the header.
+        header = self.browser.find_element_by_id('header')
+        self.assertIn('knyg.ht', header.text)
+
+        # And the main navigation menu.
+        nav = self.browser.find_element_by_xpath("//header[@id='header']/nav")
+        self.assertTrue(nav)
