@@ -5,7 +5,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Important security settings
 ALLOWED_HOSTS = []
-DEBUG = True
+DEBUG = False
 SECRET_KEY = os.environ['SECRET_KEY']
 
 
