@@ -64,7 +64,7 @@ WSGI_APPLICATION = 'knyght.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'knyght.db',
+        'NAME': os.path.join(BASE_DIR, 'knyght.db'),
     }
 }
 
