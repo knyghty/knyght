@@ -14,6 +14,8 @@ class NewVisitorTest(LiveServerTestCase):
     def test_homepage_browse(self):
         # Bertram lands on the hompage of the site.
         self.browser.get(self.live_server_url)
+        self.browser.implicitly_wait(2)
+        print(self.browser.page_source)
 
         # He sees knyg.ht in the title.
         self.assertIn('knyg.ht', self.browser.title)
