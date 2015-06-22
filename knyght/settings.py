@@ -4,7 +4,7 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Important security settings
-ALLOWED_HOSTS = ['knyg.ht']
+ALLOWED_HOSTS = []
 DEBUG = True
 SECRET_KEY = os.environ['SECRET_KEY']
 
