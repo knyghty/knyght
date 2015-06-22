@@ -39,4 +39,6 @@ class NewVisitorTest(LiveServerTestCase):
 
         # TODO: Stuff on the homepage.
 
-        # TODO: Footer
+        # At the end of the page is the footer.
+        footer = self.browser.find_element_by_id('footer')
+        self.assertTrue(footer)

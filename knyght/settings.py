@@ -1,15 +1,12 @@
 import os
 
-import dj_database_url
-
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Important security settings
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['knyg.ht']
 DEBUG = True
 SECRET_KEY = os.environ['SECRET_KEY']
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 
 # Application definition
@@ -64,8 +61,12 @@ WSGI_APPLICATION = 'knyght.wsgi.application'
 
 
 # Database
-DATABASES = {}
-DATABASES['default'] = dj_database_url.config()
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'knyght.db',
+    }
+}
 
 
 # Internationalization
@@ -77,7 +78,7 @@ USE_TZ = True
 
 
 # Static files
-STATIC_ROOT = 'staticfiles'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
